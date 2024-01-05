@@ -21,7 +21,7 @@ export default class Airport {
     this._code = newCode;
   }
 
-  get [Symbol.toString]() {
+  get [Symbol.toStringTag]() {
     return this._code;
   }
 }
