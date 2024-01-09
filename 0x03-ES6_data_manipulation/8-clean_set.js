@@ -10,7 +10,7 @@ export default function cleanSet(set, startString) {
  * return resultString;
  */
   const parts = [];
-  for (const value of set.values()) {
+  set.forEach (function(value)) {
     if (typeof value === 'string' && value.startsWith(startString)) {
       const valueSubStr = value.substring(startString.length);
 
