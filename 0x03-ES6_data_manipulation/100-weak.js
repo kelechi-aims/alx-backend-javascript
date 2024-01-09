@@ -1,7 +1,7 @@
 // Creates and export a WeakMap to track the number of queries for each endpoint
 export const weakMap = new WeakMap();
 
-export default function queryAPI(endpoint) {
+export function queryAPI(endpoint) {
   // Check if the weakMap has an entry for the given endpoint
   if (!weakMap.has(endpoint)) {
     // If not, set the initial count to 1
