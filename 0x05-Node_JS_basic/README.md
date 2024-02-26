@@ -54,8 +54,9 @@ Katie,Shirou,21,CS
 
 ### package.json
 <details>
-<summary>Click to show/hide file contents</summary>
+  <summary>Click to show/hide file contents</summary>
 
+```javascript
 {
   "name": "node_js_basics",
   "version": "1.0.0",
@@ -88,11 +89,13 @@ Katie,Shirou,21,CS
   }
 }
 </details>
+```
 
 ### babel.config.js
 <details>
-<summary>Click to show/hide file contents</summary>
+  <summary>Click to show/hide file contents</summary>
 
+```javascript
 module.exports = {
   presets: [
     [
@@ -106,10 +109,11 @@ module.exports = {
   ],
 };
 </details>
+```
 
 ### .eslintrc.js
 <details>
-<summary>Click to show/hide file contents</summary>
+  <summary>Click to show/hide file contents</summary>
 
 module.exports = {
   env: {
@@ -149,6 +153,7 @@ module.exports = {
   ]
 };
 </details>
+```
 
 and…
 Don’t forget to run $ npm install when you have the package.json
