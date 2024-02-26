@@ -115,6 +115,7 @@ module.exports = {
 <details>
   <summary>Click to show/hide file contents</summary>
 
+```javascript
 module.exports = {
   env: {
     browser: false,
