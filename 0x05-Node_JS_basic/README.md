@@ -156,5 +156,19 @@ module.exports = {
 </details>
 ```
 
+<style>
+  /* Style for the summary (collapsed) */
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Style for the content (expanded) */
+  details[open] {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+</style>
+
 and…
 Don’t forget to run ```$ npm``` install when you have the ```package.json```
