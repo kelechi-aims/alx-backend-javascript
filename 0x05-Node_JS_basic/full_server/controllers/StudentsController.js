@@ -23,7 +23,7 @@ class StudentsController {
           const rep = [];
           student[major].forEach((firstname) => {
             rep.push(firstname);
-	  });
+          });
           response.status(200).send(`List: ${rep.join(', ')}`);
         })
         .catch(() => {
