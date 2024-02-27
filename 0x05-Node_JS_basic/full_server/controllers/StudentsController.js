@@ -3,17 +3,15 @@ const readDatabase = require('../utils');
 class StudentsController {
   static getAllStudents(request, response) {
     readDatabase(process.argv[2])
-      .then((data) => {
-        const res = ['This is the list of our students'];
-        Object.keys(data).sort().forEach((key) => {
-          res.push(`Number of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`);
+      .then((student) => {
+        const rep = ['This is the list of our students'];
+        Object.keys(student).sort().forEach((key) => {
+          rep.push(`Number of students in ${key}: ${student[key].length}. List: ${student[key].join(', ')}`);
         });
-        response.status(200);
-        response.send(res.join('\n'));
+        response.status(200).send(rep.join('\n'));
       })
       .catch(() => {
-        response.status(500);
-        response.send('Cannot load the database');
+        response.status(500).send('Cannot load the database');
       });
   }
 
@@ -21,21 +19,18 @@ class StudentsController {
     const { major } = request.params;
     if (['CS', 'SWE'].includes(major)) {
       readDatabase(process.argv[2])
-        .then((data) => {
-          const res = [];
-          data[major].forEach((names) => {
-            res.push(names);
-          });
-          response.status(200);
-          response.send(`List: ${res.join(', ')}`);
+        .then((student) => {
+          const rep = [];
+          student[major].forEach((firstname) => {
+            rep.push(firstname);
+	  });
+          response.status(200).send(`List: ${rep.join(', ')}`);
         })
         .catch(() => {
-          response.status(500);
-          response.send('Cannot load the database');
+          response.status(500).send('Cannot load the database');
         });
     } else {
-      response.status(500);
-      response.send('Major parameter must be CS or SWE');
+      response.status(500).send('Major parameter must be CS or SWE');
     }
   }
 }

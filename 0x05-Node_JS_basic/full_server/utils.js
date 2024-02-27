@@ -1,25 +1,27 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-async function readDatabase(path) {
+function readDatabase(path) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8')
-      .then((db) => {
-        const students = db.split('\n').filter((line) => line.trim() !== '');
-        const fields = {};
-        students.slice(1).forEach((student) => {
-          const field = student.split(',')[3];
-          const name = student.split(',')[0];
-          if (fields[field]) {
-            fields[field].push(name);
+    fs.readFile(path, 'utf8', (error, data) => {
+      if (error) {
+        reject(new Error('Cannot load the database'));
+      } else {
+        const lines = data.toString().split('\n').filter((line) => line.trim() !== '');
+        const fieldCounts = {};
+        const studentData = lines.slice(1);
+        studentData.forEach((line) => {
+          const fields = line.split(',');
+          const firstname = fields[0];
+          const field = fields[3];
+          if (fieldCounts[field]) {
+            fieldCounts[field].push(firstname);
           } else {
-            fields[field] = [name];
+            fieldCounts[field] = [firstname];
           }
         });
-        resolve(fields);
-      })
-      .catch(() => {
-        reject(new Error());
-      });
+        resolve(fieldCounts);
+      }
+    });
   });
 }
 
