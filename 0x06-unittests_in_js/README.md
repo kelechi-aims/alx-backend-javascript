@@ -1,7 +1,10 @@
-# Unittests in JS
+# Unit Testing and Integration Testing in JavaScript
 
 **By**: Johann Kerbrat, Engineering Manager at Uber Works
 **Weight**: 1
+
+## Overview
+This project aims to demonstrate how to perform unit testing and integration testing in JavaScript using popular testing frameworks and libraries such as Mocha, Chai, and Sinon. It covers various topics including writing test suites, using different assertion libraries, handling long test suites, using spies and stubs, understanding hooks, unit testing async functions, and writing integration tests with a small Node server.
 
 ## Resources
 **Read or watch**:
@@ -32,3 +35,10 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 - A ```README.md``` file, at the root of the folder of the project, is mandatory
 - Your code should use the ```js``` extension
 -  When running every test with ```npm run test *.test.js```, everything should pass correctly without any warning or error
+
+## Setup
+1. Ensure you have Node.js installed (version 12.x.x).
+2. Clone this repository to your local machine.
+3. Navigate to the project directory in your terminal.
+4. Run `npm install` to install dependencies.
+5. Run `npm test` to execute all tests.
