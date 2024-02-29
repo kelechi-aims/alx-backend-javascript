@@ -14,5 +14,13 @@ describe('calculateNumber', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', -1.7, -2), 0);
       assert.strictEqual(calculateNumber('SUBTRACT', -1, -2.7), 2);
     });
-  }):
+  });
+
+  describe('type DIVIDE', () => {
+    it('should return the subtraction of rounded numbers', () => {
+      assert.strictEqual(calculateNumber('SUBTRACT', -1.7, -2), 0);
+      assert.strictEqual(calculateNumber('SUBTRACT', -1, -2.7), 2);
+    });
+  })
+
 });
