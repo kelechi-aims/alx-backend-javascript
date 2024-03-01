@@ -19,7 +19,12 @@ describe('calculateNumber', () => {
   describe('type DIVIDE', () => {
     it('should return the division of rounded numbers', () => {
       assert.strictEqual(calculateNumber('DIVIDE', -1.7, -2), 1);
-      assert.strictEqual(calculateNumber('DIVIDE', -4, -2.1), 2);
+      assert.strictEqual(calculateNumber('DIVIDE', -1.4, -4.666666), 0.2);
+    });
+
+    it('should return Error when divisor is zero', () => {
+      assert.strictEqual(calculateNumber('DIVIDE', -1.7, 0), 'Error');
+      assert.strictEqual(calculateNumber('DIVIDE', -1, 0), 'Error');
     });
   });
 });
